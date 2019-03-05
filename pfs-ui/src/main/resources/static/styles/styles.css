@@ -78,7 +78,6 @@ body {
 }
 
 .content {
-    min-height: 400px;
     width: 100%;
     background-color: #e0e0e0;
     flex-grow: 1;

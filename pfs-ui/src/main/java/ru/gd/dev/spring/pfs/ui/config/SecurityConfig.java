@@ -31,11 +31,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .oauth2Login()
-                .and()
-                .formLogin()
                 .loginPage("/login")
-                .permitAll()
                 .and()
+//                .formLogin()
+//                .loginPage("/login")
+//                .permitAll()
+//                .and()
                 .logout().logoutSuccessUrl("/");
     }
 
