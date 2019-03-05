@@ -1,8 +1,30 @@
 server:
   port: 8080
-
+  servlet:
+    context-path: /
 spring:
   application:
     name: ui
+  servlet:
+    multipart:
+      enabled: false
   main:
     allow-bean-definition-overriding: true
+  security:
+    oauth2:
+      client:
+        registration:
+          custom:
+            client-id: ui
+            client-secret: thisissecret
+            scope: webclient
+            grand-type: password
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8080/accounts
+        provider:
+          custom:
+            authorization-uri: http://localhost:8901/oauth/token
+            token-uri: http://localhost:8901/oauth/token
+            user-info-uri: http://localhost:8901/user
+            user-name-attribute: user_name
+

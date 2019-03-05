@@ -9,6 +9,7 @@ import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.shared.ui.LoadMode;
 import com.vaadin.flow.spring.annotation.SpringComponent;
 import com.vaadin.flow.spring.annotation.UIScope;
 import org.jetbrains.annotations.NotNull;
@@ -22,7 +23,7 @@ import ru.gd.dev.spring.pfs.ui.view.content.AccountsView;
 @Route("")
 @UIScope
 @SpringComponent
-@StyleSheet("/styles/styles.css")
+@StyleSheet(value = "/styles/styles.css")
 public class TitleView extends VerticalLayout {
 
     @NotNull

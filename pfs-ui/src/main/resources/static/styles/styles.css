@@ -78,6 +78,7 @@ body {
 }
 
 .content {
+    min-height: 400px;
     width: 100%;
     background-color: #e0e0e0;
     flex-grow: 1;
@@ -109,14 +110,14 @@ body {
 .footer {
     width: 100%;
     background-color: rgb(39, 35, 35);
-    min-height: 80px;
+    height: 80px;
     flex-shrink: 0;
 }
 
 .footerContainer {
     margin: 0 auto;
     width: 1170px;
-    min-height: inherit;
+    height: inherit;
     display: flex;
     align-items: center;
     justify-content: flex-end;
