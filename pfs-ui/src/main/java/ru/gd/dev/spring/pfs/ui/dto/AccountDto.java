@@ -1,15 +1,17 @@
 package ru.gd.dev.spring.pfs.ui.dto;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.jetbrains.annotations.NotNull;
 import ru.gd.dev.spring.pfs.ui.dto.base.AbstractNamedDto;
 
-@Data
-@EqualsAndHashCode(callSuper = true)
+@Getter
+@Setter
 @NoArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class AccountDto extends AbstractNamedDto {
 
 	private static final long serialVersionUID = 1596263169401921474L;
@@ -21,13 +23,13 @@ public class AccountDto extends AbstractNamedDto {
     private String comment = "";
 
   	@NotNull
-	  private Boolean active = Boolean.FALSE;
+	private Boolean active = Boolean.FALSE;
 
     @NotNull
     private String userId = "";
 
     @NotNull
-    private AccountType type = AccountType.CASH;
+    private String type = "";
 
     @NotNull
     private String clientId = "";

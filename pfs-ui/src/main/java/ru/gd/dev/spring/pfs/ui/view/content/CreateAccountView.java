@@ -12,6 +12,7 @@ import com.vaadin.flow.spring.annotation.UIScope;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.springframework.context.MessageSource;
+import ru.gd.dev.spring.pfs.ui.client.AccountService;
 import ru.gd.dev.spring.pfs.ui.dto.AccountDto;
 import ru.gd.dev.spring.pfs.ui.dto.AccountType;
 import ru.gd.dev.spring.pfs.ui.view.menu.MenuView;
@@ -33,7 +34,7 @@ public class CreateAccountView extends VerticalLayout {
     private MessageSource messageSource;
 
     @NotNull
-    private Label title;
+    private AccountService accountService;
 
     @NotNull
     private TextField accountName;
@@ -47,9 +48,10 @@ public class CreateAccountView extends VerticalLayout {
     @Nullable
     private AccountDto accountDto;
 
-    public CreateAccountView(@NotNull final MessageSource messageSource) {
-        accountDto = new AccountDto();
+    public CreateAccountView(@NotNull final MessageSource messageSource, @NotNull final AccountService accountService) {
+        this.accountService = accountService;
         this.messageSource = messageSource;
+        accountDto = new AccountDto();
         addTitle(messageSource);
         addNameField(messageSource);
         addAmountField(messageSource);
@@ -59,22 +61,22 @@ public class CreateAccountView extends VerticalLayout {
     }
 
     private void addTitle(@NotNull final MessageSource messageSource) {
-        title = new Label(messageSource.getMessage("addaccount.title", null, getLocale()));
+        final Label title = new Label(messageSource.getMessage("addaccount.title", null, getLocale()));
         title.getClassNames().add("pageTitle");
         add(title);
     }
 
     private void addNameField(@NotNull final MessageSource messageSource) {
         accountName = new TextField(messageSource.getMessage("addaccount.name", null, getLocale()));
-        title.getClassNames().add("textField");
-        title.getClassNames().add("accountName");
+        accountName.getClassNames().add("textField");
+        accountName.getClassNames().add("accountName");
         add(accountName);
     }
 
     private void addAmountField(@NotNull final MessageSource messageSource) {
         accountAmount = new TextField(messageSource.getMessage("addaccount.amount", null, getLocale()));
-        title.getClassNames().add("textField");
-        title.getClassNames().add("accountAmount");
+        accountAmount.getClassNames().add("textField");
+        accountAmount.getClassNames().add("accountAmount");
         add(accountAmount);
     }
 
@@ -85,7 +87,7 @@ public class CreateAccountView extends VerticalLayout {
                         getLocale()));
         final Collection<AccountType> items = Arrays.stream(AccountType.values()).collect(Collectors.toList());
         accountType.setItems(items);
-        accountType.addValueChangeListener(e -> accountDto.setType(e.getValue()));
+        accountType.addValueChangeListener(e -> accountDto.setType(e.getValue().name()));
         accountType.getClassNames().add("accountTypeComboBox");
         add(accountType);
     }
@@ -108,10 +110,10 @@ public class CreateAccountView extends VerticalLayout {
         add(createButton);
     }
 
-    private AccountDto createAccountDTO() {
+    private void createAccountDTO() {
         accountDto.setName(accountName.getValue());
         accountDto.setAmount(accountAmount.getValue());
         accountDto.setActive(true);
-        return accountDto;
+        accountService.create(accountDto);
     }
 }

@@ -74,9 +74,9 @@ public class AccountsController {
         return new ResultDto();
     }
 
-    @DeleteMapping(consumes = APPLICATION_JSON_UTF8_VALUE)
-    public ResultDto delete(@PathVariable final String accountId) {
-        service.deleteById(accountId);
+    @DeleteMapping(value = "/{id}", consumes = APPLICATION_JSON_UTF8_VALUE)
+    public ResultDto delete(@PathVariable final String id) {
+        service.deleteById(id);
         return new ResultDto();
     }
 

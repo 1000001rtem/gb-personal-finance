@@ -25,7 +25,7 @@ public class AccountMapper implements Mapper<Account, AccountDto> {
         account.setComment(dto.getComment());
         account.setActive(dto.getActive());
         account.setUserId(dto.getUserId());
-        account.setTypeId(dto.getTypeId());
+        account.setType(dto.getType());
         account.setClientId(dto.getClientId());
         account.setLogoId(dto.getLogoId());
 
@@ -44,7 +44,7 @@ public class AccountMapper implements Mapper<Account, AccountDto> {
         accountDto.setComment(entity.getComment());
         accountDto.setActive(entity.getActive());
         accountDto.setUserId(entity.getUserId());
-        accountDto.setTypeId(entity.getTypeId());
+        accountDto.setType(entity.getType());
         accountDto.setClientId(entity.getClientId());
         accountDto.setLogoId(entity.getLogoId());
         accountDto.setCreated(entity.getCreated());

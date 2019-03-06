@@ -1,5 +1,7 @@
 package ru.gd.dev.spring.pfs.ui.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 
@@ -8,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
  */
 
 @Getter
+@JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum AccountType {
     DEBIT_CARD("Debit Card", "account.type.debitcard", "/pictures/icons/debitCard.png"),
     CREDIT_CARD("Credit Card", "account.type.creditcard", "/pictures/icons/creditCard.png"),
@@ -16,12 +19,15 @@ public enum AccountType {
     CASH("Cash", "account.type.cash", "/pictures/icons/cash.png");
 
     @NotNull
+    @JsonValue
     private String title;
 
     @NotNull
+    @JsonValue
     private String messagePath;
 
     @NotNull
+    @JsonValue
     private String icon;
 
     AccountType(@NotNull final String title, @NotNull final String messagePath, @NotNull final String icon) {
