@@ -33,8 +33,8 @@ public class Account extends AbstractNamedEntity {
     private Boolean active = false;
 
     @NotNull
-    @Column(name = "type_id")
-    private String typeId = "";
+    @Column(name = "type")
+    private String type = "";
 
     @NotNull
     @Column(name = "user_id")

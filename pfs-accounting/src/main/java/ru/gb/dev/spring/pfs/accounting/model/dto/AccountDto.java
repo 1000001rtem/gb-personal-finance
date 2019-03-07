@@ -21,14 +21,14 @@ public class AccountDto extends AbstractNamedDto {
     @NotNull
     private String comment = "";
 
-	@NotNull
-	private Boolean active = Boolean.FALSE;
+    @NotNull
+    private Boolean active = Boolean.FALSE;
 
     @NotNull
     private String userId = "";
 
     @NotNull
-    private String typeId = "";
+    private String type = "";
 
     @NotNull
     private String clientId = "";
