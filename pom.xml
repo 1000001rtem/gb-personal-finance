@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ru.gb.dev.spring</groupId>
+    <artifactId>pfs</artifactId>
+    <version>1.0.0</version>
+    <description>Personal Finance Service</description>
+    <name>${project.artifactId}</name>
+    <packaging>pom</packaging>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <project.version>1.0.0</project.version>
+        <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
+    </properties>
+
+    <developers>
+        <developer>
+            <id>skubatko</id>
+            <name>Sergey Kubatko</name>
+            <email>skubatko@gmail.com</email>
+        </developer>
+        <developer>
+            <id>sergeyko69</id>
+            <name>Sergey Kogut</name>
+            <email>koguts@yandex.ru</email>
+        </developer>
+        <developer>
+            <id>artemeremin</id>
+            <name>Artem Eremin</name>
+            <email>1000001rtem@gmail.com</email>
+        </developer>
+        <developer>
+            <id>vladzn</id>
+            <name>Vladislav Zinchenko</name>
+            <email>vzinchenko36@gmail.com</email>
+        </developer>
+    </developers>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.2.RELEASE</version>
+        <relativePath /> <!-- lookup parent from repository -->
+    </parent>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>pfs-accounting</module>
+        <module>pfs-authentication</module>
+        <module>pfs-notification</module>
+        <module>pfs-statistics</module>
+        <module>pfs-ui</module>
+        <module>pfs-server-config</module>
+        <module>pfs-server-discovery</module>
+        <module>pfs-server-gateway</module>
+    </modules>
+
+</project>

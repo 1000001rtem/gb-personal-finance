@@ -1,0 +1,14 @@
+# https://docs.travis-ci.com/user/languages/java/
+language: java
+jdk: oraclejdk8
+services: postgresql
+
+#https://dzone.com/articles/travis-ci-tutorial-java-projects
+cache:
+  directories:
+  - $HOME/.m2
+
+# https://docs.travis-ci.com/user/database-setup/#PostgreSQL
+before_script:
+  - psql -U postgres -tc "SELECT 1 FROM pg_database WHERE datname = 'notification'" | grep -q 1 || psql -U postgres -c "CREATE DATABASE notification"
+  - psql -c 'create user "user"; grant all privileges on database notification to "user"' -U postgres

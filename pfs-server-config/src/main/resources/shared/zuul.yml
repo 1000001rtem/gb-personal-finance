@@ -1,0 +1,13 @@
+zuul:
+  sensitiveHeaders: Cookie, Set-Cookie # allow Zuul to propagate the “Authorization” HTTP header
+  retryable: true
+  ignored-services: "*"
+  prefix: /api
+  strip-prefix: false
+  routes:
+    accounting:
+      path: /accounts/**
+      serviceId: accounting
+      strip-prefix: false
+
+

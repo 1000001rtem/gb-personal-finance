@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: authentication
+  cloud:
+    config:
+      fail-fast: true
+      uri: http://localhost:8888
+      discovery:
+        enabled: true
+        serviceId: config

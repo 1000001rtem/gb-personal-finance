@@ -1,0 +1,48 @@
+@font-face {
+    font-family: "Pacifico";
+    src: url(../fonts/Pacifico.ttf);
+}
+
+body {
+    background-color: rgb(39, 35, 35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.loginBox:before {
+    content: '';
+    width: 300px;
+    height: 400px;
+    background: inherit;
+    position: absolute;
+    left: -25px;
+    top: -25px;
+    box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.3);
+    filter: blur(10px);
+}
+
+.loginBox {
+    background: inherit;
+    width: 250px;
+    height: 350px;
+    position: absolute;
+    overflow: hidden;
+}
+
+.form {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+    text-align: left;
+}
+
+.title {
+    font-family: "Pacifico", sans-serif;
+    font-size: 30px;
+    width: 390px;
+    text-align: center;
+}
