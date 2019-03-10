@@ -1,5 +1,6 @@
-package ru.gd.dev.spring.pfs.ui.view.content;
+package ru.gd.dev.spring.pfs.ui.view.content.account;
 
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.html.Label;
@@ -103,7 +104,10 @@ public class CreateAccountView extends VerticalLayout {
         final Button createButton = new Button(messageSource.getMessage("button.create", null, getLocale()));
         createButton.addClickListener(e -> {
             createAccountDTO();
-            createButton.getUI().ifPresent(ui -> ui.navigate("accounts"));
+            createButton.getUI().ifPresent(ui -> {
+                ui.navigate("accounts");
+                UI.getCurrent().getPage().reload();
+            });
         });
         createButton.getClassNames().add("button");
         createButton.getClassNames().add("createAccountButton");

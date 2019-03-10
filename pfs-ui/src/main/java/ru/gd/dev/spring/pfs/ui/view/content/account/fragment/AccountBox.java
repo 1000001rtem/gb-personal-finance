@@ -1,4 +1,4 @@
-package ru.gd.dev.spring.pfs.ui.view.content.fragment;
+package ru.gd.dev.spring.pfs.ui.view.content.account.fragment;
 
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.html.Anchor;
@@ -9,7 +9,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.jetbrains.annotations.Nullable;
 import ru.gd.dev.spring.pfs.ui.dto.AccountDto;
 import ru.gd.dev.spring.pfs.ui.dto.AccountType;
-import ru.gd.dev.spring.pfs.ui.view.content.AccountDetailView;
+import ru.gd.dev.spring.pfs.ui.view.content.account.AccountDetailView;
 
 /**
  * @autor Eremin Artem on 24.02.2019.

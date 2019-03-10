@@ -1,4 +1,4 @@
-package ru.gd.dev.spring.pfs.ui.view.content;
+package ru.gd.dev.spring.pfs.ui.view.content.account;
 
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Label;
@@ -11,8 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import ru.gd.dev.spring.pfs.ui.client.AccountService;
 import ru.gd.dev.spring.pfs.ui.dto.AccountDto;
-import ru.gd.dev.spring.pfs.ui.view.content.fragment.AccountBox;
-import ru.gd.dev.spring.pfs.ui.view.content.fragment.CircleChartBox;
+import ru.gd.dev.spring.pfs.ui.view.content.account.fragment.AccountBox;
+import ru.gd.dev.spring.pfs.ui.view.content.account.fragment.CircleChartBox;
 import ru.gd.dev.spring.pfs.ui.view.menu.MenuView;
 
 import java.util.List;

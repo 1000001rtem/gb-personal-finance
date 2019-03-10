@@ -1,4 +1,4 @@
-package ru.gd.dev.spring.pfs.ui.view.content.fragment;
+package ru.gd.dev.spring.pfs.ui.view.content.account.fragment;
 
 import com.vaadin.flow.component.charts.model.ChartType;
 import com.vaadin.flow.component.html.Div;

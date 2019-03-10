@@ -1,4 +1,4 @@
-package ru.gd.dev.spring.pfs.ui.view.content;
+package ru.gd.dev.spring.pfs.ui.view.content.account;
 
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;

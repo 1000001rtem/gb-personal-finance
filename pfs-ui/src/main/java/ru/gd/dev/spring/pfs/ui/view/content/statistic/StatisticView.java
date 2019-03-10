@@ -1,4 +1,4 @@
-package ru.gd.dev.spring.pfs.ui.view.content;
+package ru.gd.dev.spring.pfs.ui.view.content.statistic;
 
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -11,20 +11,20 @@ import ru.gd.dev.spring.pfs.ui.view.menu.MenuView;
  * @autor Eremin Artem on 24.02.2019.
  */
 
-@Route(value = "operations", layout = MenuView.class)
-public class OperationView extends VerticalLayout {
+@Route(value = "statistic", layout = MenuView.class)
+public class StatisticView extends VerticalLayout {
 
     @NotNull
     private MessageSource messageSource;
 
-    public OperationView(@NotNull final MessageSource messageSource) {
+    public StatisticView(@NotNull final MessageSource messageSource) {
         getClassNames().add("contentView");
-        getClassNames().add("operationView");
+        getClassNames().add("statisticView");
         this.messageSource = messageSource;
         final Label title =
-                new Label(messageSource.getMessage("menu.links.operation", null, getLocale()));
+                new Label(messageSource.getMessage("menu.links.statistic", null, getLocale()));
+        title.setId("statisticLabel");
         title.getClassNames().add("pageTitle");
-        title.setId("operationLabel");
         add(title);
     }
 }

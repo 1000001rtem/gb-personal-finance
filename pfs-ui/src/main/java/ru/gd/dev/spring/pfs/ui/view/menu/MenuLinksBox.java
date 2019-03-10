@@ -7,9 +7,9 @@ import com.vaadin.flow.spring.annotation.UIScope;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
-import ru.gd.dev.spring.pfs.ui.view.content.AccountsView;
-import ru.gd.dev.spring.pfs.ui.view.content.OperationView;
-import ru.gd.dev.spring.pfs.ui.view.content.StatisticView;
+import ru.gd.dev.spring.pfs.ui.view.content.account.AccountsView;
+import ru.gd.dev.spring.pfs.ui.view.content.operation.OperationView;
+import ru.gd.dev.spring.pfs.ui.view.content.statistic.StatisticView;
 
 /**
  * @autor Eremin Artem on 24.02.2019.
