@@ -8,6 +8,7 @@ import ru.gd.dev.spring.pfs.ui.dto.base.AbstractBaseDto;
 
 import javax.xml.bind.annotation.XmlRootElement;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -33,7 +34,7 @@ public class OperationDto extends AbstractBaseDto {
     private String number = "";
 
     @NotNull
-    private LocalDateTime operationDate = LocalDateTime.now();
+    private Date operationDate = new Date();
 
     @NotNull
     private Boolean active = Boolean.FALSE;

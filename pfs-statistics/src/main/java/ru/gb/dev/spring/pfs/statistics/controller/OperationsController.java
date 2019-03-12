@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import ru.gb.dev.spring.pfs.statistics.controller.dto.ResultDTO;
 import ru.gb.dev.spring.pfs.statistics.controller.dto.SuccessDTO;
 import ru.gb.dev.spring.pfs.statistics.model.dto.OperationDTO;
 import ru.gb.dev.spring.pfs.statistics.model.entity.Operation;
@@ -56,9 +58,10 @@ public class OperationsController {
 
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<Object> createOperation(@RequestBody OperationDTO operationDto) {
+    @ResponseStatus(HttpStatus.CREATED)
+    public ResultDTO createOperation(@RequestBody OperationDTO operationDto) {
         service.save(operationDto);
-        return new ResponseEntity<>("Operation is created successfully", HttpStatus.CREATED);
+        return new ResultDTO();
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)

@@ -199,7 +199,12 @@ body {
 
 .amountBox {
     position: absolute;
-    right: 5px;
+    right: 150px;
+}
 
+.addOperationButton {
+    width: 20px;
+    position: absolute;
+    right: 20px;
 }
 

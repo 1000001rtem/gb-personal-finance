@@ -97,7 +97,7 @@ public class AccountDetailView extends VerticalLayout implements HasUrlParameter
     }
 
     private void addAmountField() {
-        accountAmount = new TextField(messageSource.getMessage("addaccount.amount", null, getLocale()));
+        accountAmount = new TextField(messageSource.getMessage("amount", null, getLocale()));
         accountAmount.getClassNames().add("textField");
         accountAmount.getClassNames().add("accountAmount");
         accountAmount.setValue(accountDto.getAmount());

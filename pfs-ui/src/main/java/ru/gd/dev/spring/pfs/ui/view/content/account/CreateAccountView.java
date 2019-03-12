@@ -75,7 +75,7 @@ public class CreateAccountView extends VerticalLayout {
     }
 
     private void addAmountField(@NotNull final MessageSource messageSource) {
-        accountAmount = new TextField(messageSource.getMessage("addaccount.amount", null, getLocale()));
+        accountAmount = new TextField(messageSource.getMessage("amount", null, getLocale()));
         accountAmount.getClassNames().add("textField");
         accountAmount.getClassNames().add("accountAmount");
         add(accountAmount);
